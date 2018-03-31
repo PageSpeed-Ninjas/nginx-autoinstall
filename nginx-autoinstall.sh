@@ -123,6 +123,8 @@ case $OPTION in
 
 		# PageSpeed
 		if [[ "$PAGESPEED" = 'y' ]]; then
+			mkdir /var/ngx_pagespeed_cache
+			chown -R www-data.www-data /var/ngx_pagespeed_cache
 			cd /usr/local/src/nginx/modules
 			# Download and extract of PageSpeed module
 			echo -ne "       Downloading ngx_pagespeed      [..]\r"
@@ -410,7 +412,8 @@ case $OPTION in
 		--with-cc-opt=-Wno-deprecated-declarations"
 
 
-		NGINX_MODULES="--without-http_ssi_module \
+		NGINX_MODULES="
+		--without-http_ssi_module \
 		--without-http_scgi_module \
 		--without-http_uwsgi_module \
 		--without-http_geo_module \
