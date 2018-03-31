@@ -422,7 +422,11 @@ case $OPTION in
 		--with-file-aio \
 		--with-http_ssl_module \
 		--with-http_v2_module \
-		--with-http_mp4_module \
+		--with-google_perftools_module \
+		--with-http_dav_module \
+		--with-ipv6 \
+		--with-http_gzip_static_module \
+		--with-mail_ssl_module \
 		--with-http_auth_request_module \
 		--with-http_slice_module \
 		--with-http_stub_status_module \
